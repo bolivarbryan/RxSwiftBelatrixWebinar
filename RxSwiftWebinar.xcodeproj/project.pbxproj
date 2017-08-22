@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09013AF0052584DC57D68076 /* Pods_RxSwiftWebinar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D51A1B1076B3C979DDD42CD /* Pods_RxSwiftWebinar.framework */; };
 		BE1574A91F4CBE92003CEAEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1574A81F4CBE92003CEAEE /* AppDelegate.swift */; };
 		BE1574AE1F4CBE92003CEAEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE1574AC1F4CBE92003CEAEE /* Main.storyboard */; };
 		BE1574B01F4CBE92003CEAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE1574AF1F4CBE92003CEAEE /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D51A1B1076B3C979DDD42CD /* Pods_RxSwiftWebinar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftWebinar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1574A51F4CBE92003CEAEE /* RxSwiftWebinar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftWebinar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1574A81F4CBE92003CEAEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE1574AD1F4CBE92003CEAEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		BE58AEAF1F4CBFA80071E3A2 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		BE58AEB11F4CBFBE0071E3A2 /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
 		BE58AEB31F4CBFD50071E3A2 /* ContactListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewModel.swift; sourceTree = "<group>"; };
+		C2013AFBDA57D75AD45E0BF5 /* Pods-RxSwiftWebinar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftWebinar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftWebinar/Pods-RxSwiftWebinar.debug.xcconfig"; sourceTree = "<group>"; };
+		D7A8D05D0A209E612AB5EB4B /* Pods-RxSwiftWebinar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftWebinar.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftWebinar/Pods-RxSwiftWebinar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09013AF0052584DC57D68076 /* Pods_RxSwiftWebinar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10BD84D8D1C86408AACDB5BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D51A1B1076B3C979DDD42CD /* Pods_RxSwiftWebinar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9317F4A85879D40F1758147 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C2013AFBDA57D75AD45E0BF5 /* Pods-RxSwiftWebinar.debug.xcconfig */,
+				D7A8D05D0A209E612AB5EB4B /* Pods-RxSwiftWebinar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BE15749C1F4CBE92003CEAEE = {
 			isa = PBXGroup;
 			children = (
 				BE1574A71F4CBE92003CEAEE /* RxSwiftWebinar */,
 				BE1574A61F4CBE92003CEAEE /* Products */,
+				A9317F4A85879D40F1758147 /* Pods */,
+				10BD84D8D1C86408AACDB5BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,9 +149,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE1574B71F4CBE92003CEAEE /* Build configuration list for PBXNativeTarget "RxSwiftWebinar" */;
 			buildPhases = (
+				9F62404F33450D1AEAA2FE6B /* [CP] Check Pods Manifest.lock */,
 				BE1574A11F4CBE92003CEAEE /* Sources */,
 				BE1574A21F4CBE92003CEAEE /* Frameworks */,
 				BE1574A31F4CBE92003CEAEE /* Resources */,
+				5087590DD970D6AFB7DB7A35 /* [CP] Embed Pods Frameworks */,
+				E623A283873D18A63A61B2C9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -185,6 +212,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5087590DD970D6AFB7DB7A35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftWebinar/Pods-RxSwiftWebinar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F62404F33450D1AEAA2FE6B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E623A283873D18A63A61B2C9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftWebinar/Pods-RxSwiftWebinar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BE1574A11F4CBE92003CEAEE /* Sources */ = {
@@ -317,6 +392,7 @@
 		};
 		BE1574B81F4CBE92003CEAEE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2013AFBDA57D75AD45E0BF5 /* Pods-RxSwiftWebinar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K87XPR878Y;
@@ -330,6 +406,7 @@
 		};
 		BE1574B91F4CBE92003CEAEE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7A8D05D0A209E612AB5EB4B /* Pods-RxSwiftWebinar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K87XPR878Y;

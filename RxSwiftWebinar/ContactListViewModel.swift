@@ -7,13 +7,13 @@
 //
 
 import UIKit
-
+import RxSwift
 
 struct ContactListViewModel {
 
-   let data = [
+   let data = Observable.just([
       Contact(name: "Bryan Bolivar", phone: "+57 31039343482"),
       Contact(name: "Arturo Gamarra", phone: "+51 489631126"),
       Contact(name: "Karla Cerrón", phone: "+51 2403935439")
-   ]
+   ])
 }

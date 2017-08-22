@@ -7,45 +7,37 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ContactListViewController: UIViewController {
 
    //MARK: - Properties
-   
+
    let contactListViewModel = ContactListViewModel()
    @IBOutlet weak var contactListTableView: UITableView!
+   let disposeBag: DisposeBag = DisposeBag()
+   let cellIdentifier = "ContactCell"
 
    //MARK: - View Life Cycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      contactListTableView.dataSource = self
-      contactListTableView.delegate = self
-    }
-}
+   override func viewDidLoad() {
+      super.viewDidLoad()
 
-//MARK: - TableView DataSource
-
-extension ContactListViewController: UITableViewDataSource {
-   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return contactListViewModel.data.count
-   }
-
-   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      guard let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell") else {
-         return UITableViewCell()
+      //Rx DataSource
+      contactListViewModel.data
+         .bind(to: contactListTableView.rx.items(cellIdentifier: cellIdentifier)) { _, contact, cell in
+            cell.textLabel?.text = contact.name
+            cell.detailTextLabel?.text = contact.phone
+            cell.imageView?.image = contact.image
       }
+      .addDisposableTo(disposeBag)
 
-      let contact = contactListViewModel.data[indexPath.row]
-      cell.textLabel?.text = contact.name
-      cell.detailTextLabel?.text = contact.phone
-      cell.imageView?.image = contact.image
-      return cell
-   }
-}
 
-extension ContactListViewController: UITableViewDelegate {
-   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      print("\(contactListViewModel.data[indexPath.row].name)")
+      contactListTableView.rx.modelSelected(Contact.self)
+         .subscribe(onNext: { object in
+            print("Contacto seleccionado: \(object.name), \(object.phone)")
+         })
+         .addDisposableTo(disposeBag)
    }
 }

@@ -1,0 +1,6 @@
+framework module Pods_RxSwiftWebinar {
+  umbrella header "Pods-RxSwiftWebinar-umbrella.h"
+
+  export *
+  module * { export * }
+}
